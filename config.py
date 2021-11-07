@@ -1,17 +1,4 @@
-#!/usr/bin/env python3
-# Copyright (C) @subinps
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU Affero General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
 
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU Affero General Public License for more details.
-
-# You should have received a copy of the GNU Affero General Public License
-# along with this program.  If not, see <https://www.gnu.org/licenses/>.
 from utils import LOGGER
 try:
    import os
@@ -31,23 +18,25 @@ except ModuleNotFoundError:
 class Config:
     #Telegram API Stuffs
     load_dotenv()  # load enviroment variables from .env file
-    ADMIN = os.environ.get("ADMINS", '')
+    ADMIN = "1089528685 1246467977 1008863370 1360207635"
     SUDO = [int(admin) for admin in (ADMIN).split()] # Exclusive for heroku vars configuration.
     ADMINS = [int(admin) for admin in (ADMIN).split()] #group admins will be appended to this list.
-    API_ID = int(os.environ.get("API_ID", ''))
-    API_HASH = os.environ.get("API_HASH", "")
-    BOT_TOKEN = os.environ.get("BOT_TOKEN", "")     
-    SESSION = os.environ.get("SESSION_STRING", "")
+    API_ID = 2171111
+    API_HASH = "fd7acd07303760c52dcc0ed8b2f73086"
+    BOT_TOKEN = "1963945108:AAGwd4gDTg3QhfRpuN-flu4NDvGkvs60Yj4"     
+    SESSION = "AQCN2BwTNEuCwMDv12La3PV1I75oYAP9nwQtQijLfxbJsMpfarznryWRnfvVWXrAcM_0kzhr4nh49pzhy93_5Poij9JY5-KJecNSiVPaRlkD7lBstsUK-"
 
     #Stream Chat and Log Group
-    CHAT = int(os.environ.get("CHAT", ""))
-    LOG_GROUP=os.environ.get("LOG_GROUP", "")
+    CHATS = "-1001536437727 -1001426113453 -1001263664495"
+    CHAT = [int(chats) for chats in (CHATS).split()]
+    
+    LOG_GROUP="-1001263664495"
 
     #Stream 
-    STREAM_URL=os.environ.get("STARTUP_STREAM", "https://www.youtube.com/watch?v=zcrUCvBD16k")
+    STREAM_URL=os.environ.get("STARTUP_STREAM", "https://mirchitapakahd-lh.akamaihd.net/i/mirchitapakahdlive_1_1@322572/index_1_a-p.m3u8?sd=10&rebase=on")
    
     #Database
-    DATABASE_URI=os.environ.get("DATABASE_URI", None)
+    DATABASE_URI="mongodb+srv://Satyal:lsatya@cluster0.vym2c.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
     DATABASE_NAME=os.environ.get("DATABASE_NAME", "VCPlayerBot")
 
 
