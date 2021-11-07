@@ -12,3 +12,4 @@ dnspython
 pytz
 apscheduler
 python-dotenv
+nodejs
